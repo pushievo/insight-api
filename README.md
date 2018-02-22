@@ -439,7 +439,7 @@ Sample output:
 ### Budget Proposal List
 GET method:
 ```
-  /insight-api-dash/gobject/list/proposal
+  /insight-api-dash/gobject/list/proposal (or /insight-api-dash/gobject/list)
 ```
 
 Sample output:
