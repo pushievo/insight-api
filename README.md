@@ -50,6 +50,7 @@ This is a backend-only service. If you're looking for the web frontend applicati
     - [Budget Proposal Detail](#budget-proposal-detail)
     - [Proposal Check](#proposal-check)
     - [Proposal Deserialization](#proposal-deserialization)
+    - [Governance Budget](#governance-budget)
     - [Masternodes List](#masternodes-list)
     - [Historic Blockchain Data Sync Status](#historic-blockchain-data-sync-status)
     - [Live Network P2P Data Sync Status](#live-network-p2p-data-sync-status)
@@ -102,7 +103,7 @@ Or disabled entirely with:
     }
   }
   ```
-  
+
 
 ## API HTTP Endpoints
 
@@ -326,7 +327,7 @@ Note: if pagination params are not specified, the result is an array of transact
 
 ### Transaction Broadcasting
 
-#### Standard transaction 
+#### Standard transaction
 POST method:
 ```
   /insight-api-dash/tx/send
@@ -353,11 +354,11 @@ POST response:
   }
 ```
 
-#### InstantSend transaction 
+#### InstantSend transaction
 
-Conditions :   
-* Every inputs should have 6 confirmations.  
-* Fee are 0.001 per input.  
+Conditions :
+* Every inputs should have 6 confirmations.
+* Fee are 0.001 per input.
 * Transaction value should be below SPORK_5_INSTANTSEND_MAX_VALUE (see spork route)
 
 POST method:
@@ -375,13 +376,13 @@ POST response:
   }
 ```
 
-### Sporks List 
-GET method: 
+### Sporks List
+GET method:
 ```
   /insight-api-dash/sporks
 ```
 
-Sample output: 
+Sample output:
 ```
 {"sporks":
     {
@@ -559,6 +560,23 @@ Sample output:
   "result":"[[\"proposal\",{\"end_epoch\":1519848619,\"name\":\"ghijklmnopqrstuvwxyz01234567891519097947\",\"payment_address\":\"yik5HAgVAgjH1oZKjcDfvcf22bwBNbSYzB\",\"payment_amount\":10,\"start_epoch\":1519097947,\"type\":1,\"url\":\"https://www.dashcentral.org/p/test_proposal_1519097947\"}]]",
   "error":null,
   "id":78637
+}
+```
+
+### Governance Budget
+
+GET method:
+```
+  /insight-api-dash/governance/budget/[:blockIndex]
+  /insight-api-dash/governance/budget/79872
+```
+
+Sample output:
+```
+{
+    "result":"60.00",
+    "error":null,
+    "id":75619
 }
 ```
 
