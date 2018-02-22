@@ -43,6 +43,7 @@ This is a backend-only service. If you're looking for the web frontend applicati
     - [Transactions for Multiple Addresses](#transactions-for-multiple-addresses)
     - [Transaction Broadcasting](#transaction-broadcasting)
     - [Sporks List](#sporks-list)
+    - [Proposals Informations](#proposals-informations)
     - [Budget Proposal List](#budget-proposal-list)
     - [Budget Proposal Detail](#budget-proposal-detail)
     - [Masternodes List](#masternodes-list)
@@ -392,6 +393,30 @@ Sample output:
     }
 }
 ```
+
+### Proposals Informations
+GET method:
+```
+  /insight-api-dash/gobject/info
+```
+
+Sample output:
+```
+{
+  "result":{
+    "governanceminquorum":1,
+    "masternodewatchdogmaxseconds":7200,
+    "proposalfee":5,
+    "superblockcycle":24,
+    "lastsuperblock":79800,
+    "nextsuperblock":79824,
+    "maxgovobjdatasize":16384
+  },
+  "error":null,
+  "id":68537
+}```
+
+
 
 ### Budget Proposal List
 GET method:
