@@ -46,6 +46,7 @@ This is a backend-only service. If you're looking for the web frontend applicati
     - [Proposals Informations](#proposals-informations)
     - [Proposals Count](#proposals-count)
     - [Budget Proposal List](#budget-proposal-list)
+    - [Budget Triggers List](#budget-triggers-list)
     - [Budget Proposal Detail](#budget-proposal-detail)
     - [Masternodes List](#masternodes-list)
     - [Historic Blockchain Data Sync Status](#historic-blockchain-data-sync-status)
@@ -457,6 +458,28 @@ Sample output:
         YesCount: 40,
         NoCount: 0,
         AbstainCount: 0 } ]
+```
+
+
+
+### Budget Triggers List
+GET method:
+```
+  /insight-api-dash/gobject/list/trigger
+```
+
+Sample output:
+```
+[
+  {
+    "Hash":"fa2a7505c52438b2ca3d14def1c2cdcb59d7ccca417920182f04fcb9be968f00",
+    "DataObject":{"type":2},
+    "AbsoluteYesCount":53,
+    "YesCount":53,
+    "NoCount":0,
+    "AbstainCount":0
+  }
+]
 ```
 
 ### Budget Proposal Detail
