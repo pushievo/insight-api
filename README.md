@@ -44,6 +44,7 @@ This is a backend-only service. If you're looking for the web frontend applicati
     - [Transaction Broadcasting](#transaction-broadcasting)
     - [Sporks List](#sporks-list)
     - [Proposals Informations](#proposals-informations)
+    - [Proposals Count](#proposals-count)
     - [Budget Proposal List](#budget-proposal-list)
     - [Budget Proposal Detail](#budget-proposal-detail)
     - [Masternodes List](#masternodes-list)
@@ -414,7 +415,23 @@ Sample output:
   },
   "error":null,
   "id":68537
-}```
+}
+```
+
+### Proposals Count
+GET method:
+```
+  /insight-api-dash/gobject/count
+```
+
+Sample output:
+```
+{
+  "result":"Governance Objects: 47 (Proposals: 7, Triggers: 40, Watchdogs: 0/0, Other: 0; Erased: 0), Votes: 1883",
+  "error":null,
+  "id":47025
+}
+```
 
 
 
