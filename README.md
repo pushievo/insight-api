@@ -48,6 +48,8 @@ This is a backend-only service. If you're looking for the web frontend applicati
     - [Budget Proposal List](#budget-proposal-list)
     - [Budget Triggers List](#budget-triggers-list)
     - [Budget Proposal Detail](#budget-proposal-detail)
+    - [Proposal Check](#proposal-check)
+    - [Proposal Deserialization](#proposal-deserialization)
     - [Masternodes List](#masternodes-list)
     - [Historic Blockchain Data Sync Status](#historic-blockchain-data-sync-status)
     - [Live Network P2P Data Sync Status](#live-network-p2p-data-sync-status)
@@ -528,6 +530,36 @@ Sample output:
             NoCount: 0,
             AbstainCount: 0
         } } ]
+```
+
+### Proposal Check
+
+GET method:
+```
+  /insight-api-dash/gobject/check/[:hexData]
+  /insight-api-dash/gobject/check/5b5b2270726f706f736[..]
+```
+
+Sample output:
+```
+    {"Object status":"OK"}
+```
+
+### Proposal Deserialization
+
+GET method:
+```
+  /insight-api-dash/gobject/deserialize/[:hexData]
+  /insight-api-dash/gobject/deserialize/5b5b2270726f706f736[..]
+```
+
+Sample output:
+```
+{
+  "result":"[[\"proposal\",{\"end_epoch\":1519848619,\"name\":\"ghijklmnopqrstuvwxyz01234567891519097947\",\"payment_address\":\"yik5HAgVAgjH1oZKjcDfvcf22bwBNbSYzB\",\"payment_amount\":10,\"start_epoch\":1519097947,\"type\":1,\"url\":\"https://www.dashcentral.org/p/test_proposal_1519097947\"}]]",
+  "error":null,
+  "id":78637
+}
 ```
 
 ### Masternodes List
