@@ -50,6 +50,7 @@ This is a backend-only service. If you're looking for the web frontend applicati
     - [Budget Proposal Detail](#budget-proposal-detail)
     - [Proposal Check](#proposal-check)
     - [Proposal Deserialization](#proposal-deserialization)
+    - [Proposal Current Votes](#proposal-current-votes)
     - [Governance Budget](#governance-budget)
     - [Masternodes List](#masternodes-list)
     - [Historic Blockchain Data Sync Status](#historic-blockchain-data-sync-status)
@@ -563,12 +564,56 @@ Sample output:
 }
 ```
 
+### Proposal Current Votes
+
+GET method:
+```
+  /insight-api-dash/gobject/votes/current/[:hash]
+  /insight-api-dash/gobject/votes/current/fbda8cdc1f48917f53b7d63fbce81c85d6dedd3d0e476e979926dfd154b84034
+```
+
+Sample output:
+```
+{
+  "result":"[[\"proposal\",{\"end_epoch\":1519848619,\"name\":\"ghijklmnopqrstuvwxyz01234567891519097947\",\"payment_address\":\"yik5HAgVAgjH1oZKjcDfvcf22bwBNbSYzB\",\"payment_amount\":10,\"start_epoch\":1519097947,\"type\":1,\"url\":\"https://www.dashcentral.org/p/test_proposal_1519097947\"}]]",
+  "error":null,
+  "id":78637
+}
+```
+
 ### Governance Budget
 
 GET method:
 ```
   /insight-api-dash/governance/budget/[:blockIndex]
   /insight-api-dash/governance/budget/79872
+```
+
+Sample output:
+```
+{
+    "result":"60.00",
+    "error":null,
+    "id":75619
+}
+```
+
+### Submit Proposal
+
+POST method:
+```
+  /insight-api-dash/gobject/submit
+```
+
+Exemple input :
+```
+{
+  "parentHash":"abc",
+  "revision":1,
+  "time":10009,
+  "dataHex":"abc",
+  "feeTxId":"abc"
+}
 ```
 
 Sample output:
